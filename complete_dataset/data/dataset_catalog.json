@@ -1,0 +1,19 @@
+{
+  "microbigge": {
+    "files": [
+      {
+        "filePath": "nucleotide.fna",
+        "fileType": "GENOMIC_NUCLEOTIDE_FASTA"
+      },
+      {
+        "filePath": "proteins.faa",
+        "fileType": "PROTEIN_FASTA"
+      },
+      {
+        "filePath": "data_report.jsonl",
+        "fileType": "DATA_REPORT"
+      }
+    ]
+  },
+  "apiVersion": "V1"
+}
