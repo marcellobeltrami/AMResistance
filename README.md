@@ -5,7 +5,7 @@ It uses protein-level encoding (amino acid one-hot representation) and deep lear
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 AntibioticResistance/
@@ -19,7 +19,7 @@ AntibioticResistance/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository and install dependencies:
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Data
+## Data
 
 The input dataset should contain protein sequences with metadata. Example format:
 
@@ -43,7 +43,7 @@ The input dataset should contain protein sequences with metadata. Example format
 
 ---
 
-## 🔬 Pipeline
+## Pipeline
 
 1. **Encoding**
    - Protein sequences → one-hot vectors (20 amino acids)
@@ -71,22 +71,22 @@ The input dataset should contain protein sequences with metadata. Example format
 
 ---
 
-## 💾 Saving & Loading Models
+## Saving & Loading Models
 
 Save:
 ```python
-model.model.save("resistance_model.h5")
+model.model.save("./model/resistance_model.h5")
 ```
 
 Load:
 ```python
 from tensorflow.keras.models import load_model
-loaded_model = load_model("resistance_model.h5")
+loaded_model = load_model("./model/resistance_model.h5")
 ```
 
 ---
 
-## 🧪 Example Output
+## 🧪Example Output
 
 ```
 Predictions: ['AMINOGLYCOSIDE', 'QUINOLONE', 'LIPOPEPTIDE']
@@ -94,7 +94,7 @@ Predictions: ['AMINOGLYCOSIDE', 'QUINOLONE', 'LIPOPEPTIDE']
 
 ---
 
-## 📌 TODO
+## TODO
 
 - [ ] Improve dataset preprocessing  
 - [ ] Try Transformer-based encoders  
@@ -103,5 +103,5 @@ Predictions: ['AMINOGLYCOSIDE', 'QUINOLONE', 'LIPOPEPTIDE']
 
 ---
 
-## 📜 License
+## License
 MIT License
