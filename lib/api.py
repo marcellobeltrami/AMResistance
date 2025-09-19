@@ -30,8 +30,10 @@ def predict(data: InputData):
     label_encoder = joblib.load("/home/marcello/learn/python/AntibioticResistance/model/label_encoder.pkl")
     predicted_class = label_encoder.inverse_transform(pred.argmax(axis=1))
 
+    class_str = list(predicted_class)
 
-    return {"prediction": str(predicted_class)}
+    print(class_str[0])
+    return {"prediction": class_str[0]}
 
 if __name__ == "__main__":
     uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
