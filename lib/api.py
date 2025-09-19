@@ -1,6 +1,6 @@
 import uvicorn
 import joblib
-from encoding import GeneEncoder
+from .encoding import GeneEncoder
 from fastapi import FastAPI
 from pydantic import BaseModel
 from tensorflow.keras.models import load_model
