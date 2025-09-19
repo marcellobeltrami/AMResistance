@@ -3,6 +3,7 @@ from tensorflow.keras import layers, models, optimizers
 
 # --------------------------
 # Resistance Model
+# >>>> Architecture might need to be revised. 
 # --------------------------
 class ResistanceModel:
     def __init__(self, max_len, num_classes, hidden_size=64, model_type="lstm"):
@@ -21,7 +22,20 @@ class ResistanceModel:
         else:
             raise ValueError("Unsupported model_type. Choose 'lstm' or 'gru'.")
 
+        # Hidden dense layer
         x = layers.Dense(128, activation="relu")(x)
+
+        # Regularization + normalization
+        x = layers.BatchNormalization()(x)   # normalize activations
+        x = layers.Dropout(0.3)(x)           # prevent overfitting
+
+        # Another hidden layer
+        x = layers.Dense(64, activation="relu")(x)
+
+        # Optional extra features
+        x = layers.GaussianNoise(0.1)(x)     # robustness
+        x = layers.Dense(32, activation="relu")(x)
+
         outputs = layers.Dense(num_classes, activation="softmax")(x)
 
         self.model = models.Model(inputs, outputs)
